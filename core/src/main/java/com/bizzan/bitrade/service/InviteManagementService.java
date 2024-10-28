@@ -62,7 +62,7 @@ public class InviteManagementService extends BaseService{
      * @return
      */
     public Page<Member> queryId(InviteManagementVO inviteManagementVO) {
-        Member member = dao.findOne(inviteManagementVO.getId());
+        Member member = dao.getOne(inviteManagementVO.getId());
         // 获取当前用户的id  根据id去查询邀请者ID 为这个id 的所有的数据
         List<Member> memberList = new ArrayList<>();
         List<Member> firstMemberList = dao.findAllByInviterId(member.getId());

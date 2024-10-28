@@ -29,7 +29,7 @@ public class MemberWeightUpperService extends BaseService {
     public MemberWeightUpper findMemberWeightUpperByMemberId(Long memberId) {
         Criteria<MemberWeightUpper> specification = new Criteria<MemberWeightUpper>();
         specification.add(Restrictions.eq("memberId", memberId, false));
-        return memberWeightUpperDao.findOne(specification);
+        return memberWeightUpperDao.findOne(specification).get();
     }
 
     public List<MemberWeightUpper> findAllByUpperIds(String uppers) {

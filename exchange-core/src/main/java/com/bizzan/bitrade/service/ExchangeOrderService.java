@@ -540,26 +540,26 @@ public class ExchangeOrderService extends BaseService {
     }
 
     public ExchangeOrder findOne(String id) {
-        return exchangeOrderRepository.findOne(id);
+        return exchangeOrderRepository.getOne(id);
     }
 
     @Transactional(readOnly = true)
     public PageResult<ExchangeOrder> queryWhereOrPage(List<Predicate> predicates, Integer pageNo, Integer pageSize) {
         List<ExchangeOrder> list;
-        JPAQuery<ExchangeOrder> jpaQuery = queryFactory.selectFrom(QExchangeOrder.exchangeOrder);
-        if (predicates != null) {
-            jpaQuery.where(predicates.toArray(new BooleanExpression[predicates.size()]));
-        }
-        jpaQuery.orderBy(QExchangeOrder.exchangeOrder.time.desc());
-        if (pageNo != null && pageSize != null) {
-            list = jpaQuery.offset((pageNo - 1) * pageSize).limit(pageSize).fetch();
-        } else {
-            list = jpaQuery.fetch();
-        }
-        PageResult<ExchangeOrder> result = new PageResult<>(list, jpaQuery.fetchCount());
-        result.setNumber(pageNo);
-        result.setSize(pageSize);
-        return result;
+//        JPAQuery<ExchangeOrder> jpaQuery = queryFactory.selectFrom(QExchangeOrder.exchangeOrder);
+//        if (predicates != null) {
+//            jpaQuery.where(predicates.toArray(new BooleanExpression[predicates.size()]));
+//        }
+//        jpaQuery.orderBy(QExchangeOrder.exchangeOrder.time.desc());
+//        if (pageNo != null && pageSize != null) {
+//            list = jpaQuery.offset((pageNo - 1) * pageSize).limit(pageSize).fetch();
+//        } else {
+//            list = jpaQuery.fetch();
+//        }
+//        PageResult<ExchangeOrder> result = new PageResult<>(list, jpaQuery.fetchCount());
+//        result.setNumber(pageNo);
+//        result.setSize(pageSize); TODO ...
+        return null;
     }
 
     /**

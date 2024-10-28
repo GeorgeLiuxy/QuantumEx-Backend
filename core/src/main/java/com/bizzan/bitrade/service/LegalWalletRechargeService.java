@@ -47,11 +47,11 @@ public class LegalWalletRechargeService extends TopBaseService<LegalWalletRechar
     public LegalWalletRecharge findOneByIdAndMemberId(Long id, long memberId) {
         Predicate predicate = QLegalWalletRecharge.legalWalletRecharge.id.eq(id)
                 .and(QLegalWalletRecharge.legalWalletRecharge.member.id.eq(memberId));
-        return legalWalletRechargeDao.findOne(predicate);
+        return legalWalletRechargeDao.findOne(predicate).get();
     }
 
     public LegalWalletRecharge findOne(Long id) {
-        return legalWalletRechargeDao.findOne(id);
+        return legalWalletRechargeDao.getOne(id);
     }
 
     @Override

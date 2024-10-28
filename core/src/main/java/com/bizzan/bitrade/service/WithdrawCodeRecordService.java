@@ -67,7 +67,7 @@ public class WithdrawCodeRecordService extends BaseService {
     }
 
     public WithdrawCodeRecord findOne(Long id) {
-        return withdrawApplyDao.findOne(id);
+        return withdrawApplyDao.getOne(id);
     }
 
     /**

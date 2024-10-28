@@ -121,7 +121,7 @@ public class OrderService extends BaseService {
     }
 
     public Order findOne(Long id) {
-        return orderDao.findOne(id);
+        return orderDao.getOne(id);
     }
 
     public Order findOneByOrderSn(String orderSn) {

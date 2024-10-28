@@ -72,13 +72,13 @@ public class ExchangeCoinService {
     }
 
     public ExchangeCoin findOne(String id) {
-        return coinRepository.findOne(id);
+        return coinRepository.getOne(id);
     }
 
     @Transactional(rollbackFor = Exception.class)
     public void deletes(String[] ids) {
         for (String id : ids) {
-            coinRepository.delete(id);
+            coinRepository.deleteById(id);
         }
     }
 

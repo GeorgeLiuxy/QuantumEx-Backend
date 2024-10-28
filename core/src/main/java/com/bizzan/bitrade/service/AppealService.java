@@ -39,7 +39,7 @@ public class AppealService extends BaseService {
     private MemberDao memberDao;
 
     public Appeal findOne(Long id) {
-        Appeal appeal = appealDao.findOne(id);
+        Appeal appeal = appealDao.getOne(id);
         return appeal;
     }
 
@@ -106,8 +106,8 @@ public class AppealService extends BaseService {
      * @return
      */
     private AppealVO generateAppealVO(Appeal appeal){
-        Member initialMember = memberDao.findOne(appeal.getInitiatorId());
-        Member associateMember = memberDao.findOne(appeal.getAssociateId());
+        Member initialMember = memberDao.getOne(appeal.getInitiatorId());
+        Member associateMember = memberDao.getOne(appeal.getAssociateId());
         AppealVO vo = new AppealVO();
         vo.setAppealId(BigInteger.valueOf(appeal.getId()));
         vo.setAssociateName(associateMember.getRealName());

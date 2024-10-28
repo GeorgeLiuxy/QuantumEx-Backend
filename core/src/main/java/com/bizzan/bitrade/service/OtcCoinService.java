@@ -68,7 +68,7 @@ public class OtcCoinService extends BaseService {
     }
 
     public OtcCoin findOne(Long id) {
-        return otcCoinDao.findOne(id);
+        return otcCoinDao.getOne(id);
     }
 
     public OtcCoin findByUnit(String unit) {
@@ -107,7 +107,7 @@ public class OtcCoinService extends BaseService {
     @Transactional(rollbackFor = Exception.class)
     public void deletes(Long[] ids) {
         for (long id : ids) {
-            otcCoinDao.delete(id);
+            otcCoinDao.deleteById(id);
         }
     }
 

@@ -1,6 +1,7 @@
 package com.bizzan.bitrade.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,7 +15,7 @@ public interface MemberInviteStasticRankDao extends  BaseDao<MemberInviteStastic
 
 	MemberInviteStasticRank findByMemberId(Long memberId);
 	
-	MemberInviteStasticRank findById(Long id);
+	Optional<MemberInviteStasticRank> findById(Long id);
 	
 	/**
 	 * 获取最新排名

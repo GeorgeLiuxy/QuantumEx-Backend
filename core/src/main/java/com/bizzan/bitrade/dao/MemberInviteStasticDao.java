@@ -1,6 +1,7 @@
 package com.bizzan.bitrade.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,7 +15,7 @@ public interface MemberInviteStasticDao extends  BaseDao<MemberInviteStastic> {
 
 	MemberInviteStastic findByMemberId(Long memberId);
 	
-	MemberInviteStastic findById(Long id);
+	Optional<MemberInviteStastic> findById(Long id);
 	
 	@Query(value = "select * from member_invite_stastic order by estimated_reward desc limit :count", nativeQuery = true)
 	List<MemberInviteStastic> getTopTotalAmount(@Param("count") int count);

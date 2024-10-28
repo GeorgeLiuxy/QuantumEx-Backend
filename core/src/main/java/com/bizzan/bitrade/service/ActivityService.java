@@ -24,7 +24,7 @@ public class ActivityService extends BaseService {
     private ActivityDao activityDao;
 	
 	public Activity findOne(Long id) {
-		return activityDao.findOne(id);
+		return activityDao.getOne(id);
 	}
 	
     public Activity save(Activity activity) {
@@ -36,7 +36,7 @@ public class ActivityService extends BaseService {
     }
     
     public Activity findById(Long id) {
-        return activityDao.findOne(id);
+        return activityDao.getOne(id);
     }
     
     public Page<Activity> findAll(Predicate predicate, Pageable pageable){

@@ -65,7 +65,7 @@ public class WithdrawRecordService extends BaseService {
     }
 
     public WithdrawRecord findOne(Long id) {
-        return withdrawApplyDao.findOne(id);
+        return withdrawApplyDao.getOne(id);
     }
 
     /**
@@ -122,7 +122,7 @@ public class WithdrawRecordService extends BaseService {
         WithdrawRecord withdrawRecord;
         for (Long id : ids) {
             //20	4.70000000	0	2018-02-27 17:47:37		0.30000000	0	28	0	5.00000000			GalaxyChain
-            withdrawRecord = withdrawApplyDao.findOne(id);
+            withdrawRecord = withdrawApplyDao.getOne(id);
             //确认提现申请存在
             notNull(withdrawRecord, "不存在");
             //确认订单状态是审核中

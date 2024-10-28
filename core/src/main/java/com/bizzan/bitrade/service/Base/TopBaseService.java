@@ -43,7 +43,7 @@ public class TopBaseService<E, D extends BaseDao> {
 
 
     public E findById(Serializable id) {
-        return (E) dao.findOne(id);
+        return (E) dao.getOne(id);
     }
 
     public List<E> findAll() {

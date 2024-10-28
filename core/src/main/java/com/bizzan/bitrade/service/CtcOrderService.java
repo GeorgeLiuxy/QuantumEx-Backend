@@ -29,7 +29,7 @@ public class CtcOrderService extends BaseService {
     private CtcOrderDao ctcOrderDao;
 	
 	public CtcOrder findOne(Long id) {
-		return ctcOrderDao.findOne(id);
+		return ctcOrderDao.getOne(id);
 	}
 	
     public CtcOrder save(CtcOrder order) {
@@ -49,7 +49,7 @@ public class CtcOrderService extends BaseService {
     }
     
     public CtcOrder findById(Long id) {
-        return ctcOrderDao.findOne(id);
+        return ctcOrderDao.getOne(id);
     }
     
     public List<CtcOrder> findAllByIdAndMember(Long id, Member member) {

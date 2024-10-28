@@ -22,7 +22,7 @@ public class LockedOrderService  extends BaseService {
     private LockedOrderDao lockedOrderDao;
 
     public LockedOrder findOne(Long id) {
-        return lockedOrderDao.findOne(id);
+        return lockedOrderDao.getOne(id);
     }
 
     public LockedOrder save(LockedOrder lockedOrder) {

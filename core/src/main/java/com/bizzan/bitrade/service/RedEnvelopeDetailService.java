@@ -32,7 +32,7 @@ public class RedEnvelopeDetailService extends BaseService{
 	}
 	
 	public RedEnvelopeDetail findOne(Long id) {
-		return redEnvelopeDetailDao.findOne(id);
+		return redEnvelopeDetailDao.getOne(id);
 	}
 	
     public RedEnvelopeDetail save(RedEnvelopeDetail detail) {
@@ -44,7 +44,7 @@ public class RedEnvelopeDetailService extends BaseService{
     }
     
     public RedEnvelopeDetail findById(Long id) {
-        return redEnvelopeDetailDao.findOne(id);
+        return redEnvelopeDetailDao.getOne(id);
     }
     
     public Page<RedEnvelopeDetail> findAll(Predicate predicate, Pageable pageable){

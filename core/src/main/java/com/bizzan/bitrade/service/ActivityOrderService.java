@@ -38,7 +38,7 @@ public class ActivityOrderService extends BaseService {
     private MemberWalletService walletService;
 	
 	public ActivityOrder findOne(Long id) {
-		return activityOrderDao.findOne(id);
+		return activityOrderDao.getOne(id);
 	}
 	
     public ActivityOrder save(ActivityOrder activity) {
@@ -50,7 +50,7 @@ public class ActivityOrderService extends BaseService {
     }
     
     public ActivityOrder findById(Long id) {
-        return activityOrderDao.findOne(id);
+        return activityOrderDao.getOne(id);
     }
     
     public Page<ActivityOrder> findAll(Predicate predicate, Pageable pageable){

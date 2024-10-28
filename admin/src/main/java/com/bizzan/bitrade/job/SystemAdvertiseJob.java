@@ -1,6 +1,4 @@
 package com.bizzan.bitrade.job;
-/*
-package com.bizzan.bitrade.job;
 
 import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.dsl.BooleanExpression;
@@ -46,4 +44,3 @@ public class SystemAdvertiseJob {
 
     }
 }
-*/

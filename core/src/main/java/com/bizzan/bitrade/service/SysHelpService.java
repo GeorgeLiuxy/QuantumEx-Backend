@@ -51,13 +51,13 @@ public class SysHelpService extends BaseService {
     }
 
     public SysHelp findOne(Long id) {
-        return sysHelpDao.findOne(id);
+        return sysHelpDao.getOne(id);
     }
 
     @Transactional(rollbackFor = Exception.class)
     public void deleteBatch(Long[] ids) {
         for (Long id : ids) {
-            sysHelpDao.delete(id);
+            sysHelpDao.deleteById(id);
         }
     }
 

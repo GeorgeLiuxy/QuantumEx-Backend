@@ -103,7 +103,7 @@ public class MemberService extends BaseService {
      * @date 2019/12/25 18:42
      */
     public Member findOne(Long id) {
-        return memberDao.findOne(id);
+        return memberDao.getOne(id);
     }
 
     /**

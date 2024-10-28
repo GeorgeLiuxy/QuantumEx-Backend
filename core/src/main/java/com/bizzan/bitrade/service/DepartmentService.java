@@ -49,12 +49,12 @@ public class DepartmentService extends BaseService {
     }
 
     public Department findOne(Long departmentId) {
-        return departmentDao.findOne(departmentId);
+        return departmentDao.getOne(departmentId);
     }
 
 
     public Department getDepartmentDetail(Long departmentId) {
-        Department department = departmentDao.findOne(departmentId);
+        Department department = departmentDao.getOne(departmentId);
         Assert.notNull(department, msService.getMessage("DEPARTMENT_DOES_NOT_EXIST"));
         return department;
     }
@@ -66,13 +66,13 @@ public class DepartmentService extends BaseService {
 
     @Transactional(rollbackFor = Exception.class)
     public MessageResult deletes(Long id) {
-        Department department = departmentDao.findOne(id);
+        Department department = departmentDao.getOne(id);
         List<Admin> list = adminDao.findAllByDepartment(department);
         if (list != null && list.size() > 0) {
             MessageResult result = MessageResult.error(msService.getMessage("DELETE_ALL_USERS_IN_THIS_DEPARTMENT"));
             return result;
         }
-        departmentDao.delete(id);
+        departmentDao.deleteById(id);
         return MessageResult.success(msService.getMessage("SUCCESS"));
     }
 }

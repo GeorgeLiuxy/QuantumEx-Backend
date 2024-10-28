@@ -31,7 +31,7 @@ public class PromotionCardService extends BaseService {
 	}
 	
 	public PromotionCard findOne(Long id) {
-		return promotionCardDao.findOne(id);
+		return promotionCardDao.getOne(id);
 	}
 	
     public PromotionCard save(PromotionCard card) {
@@ -43,7 +43,7 @@ public class PromotionCardService extends BaseService {
     }
     
     public PromotionCard findById(Long id) {
-        return promotionCardDao.findOne(id);
+        return promotionCardDao.getOne(id);
     }
     
     public Page<PromotionCard> findAll(Predicate predicate, Pageable pageable){

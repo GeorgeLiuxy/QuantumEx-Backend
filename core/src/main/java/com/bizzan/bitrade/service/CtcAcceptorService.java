@@ -19,7 +19,7 @@ public class CtcAcceptorService extends BaseService {
     private CtcAcceptorDao ctcAcceptorDao;
 	
 	public CtcAcceptor findOne(Long id) {
-		return ctcAcceptorDao.findOne(id);
+		return ctcAcceptorDao.getOne(id);
 	}
 	
     public CtcAcceptor save(CtcAcceptor acceptor) {
@@ -31,7 +31,7 @@ public class CtcAcceptorService extends BaseService {
     }
     
     public CtcAcceptor findById(Long id) {
-        return ctcAcceptorDao.findOne(id);
+        return ctcAcceptorDao.getOne(id);
     }
     
     public List<CtcAcceptor> findByStatus(int status) {

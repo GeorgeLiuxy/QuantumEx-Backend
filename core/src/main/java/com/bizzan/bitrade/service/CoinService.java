@@ -66,7 +66,7 @@ public class CoinService extends BaseService {
     }
 
     public Coin findOne(String name) {
-        return coinDao.findOne(name);
+        return coinDao.getOne(name);
     }
 
     public Coin findByUnit(String unit) {
@@ -111,7 +111,7 @@ public class CoinService extends BaseService {
 
 
     public void deleteOne(String name) {
-        coinDao.delete(name);
+        coinDao.deleteById(name);
     }
 
     /**

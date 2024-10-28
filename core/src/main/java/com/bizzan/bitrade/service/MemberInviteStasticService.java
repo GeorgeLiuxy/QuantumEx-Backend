@@ -36,11 +36,11 @@ public class MemberInviteStasticService extends BaseService {
 		}
 		
 		public MemberInviteStastic findById(Long id) {
-			return memberInviteStasticDao.findById(id);
+			return memberInviteStasticDao.findById(id).get();
 		}
 		
 		public MemberInviteStasticRank findByRankId(Long id) {
-			return memberInviteStasticRankDao.findById(id);
+			return memberInviteStasticRankDao.findById(id).get();
 		}
 		
 		/**

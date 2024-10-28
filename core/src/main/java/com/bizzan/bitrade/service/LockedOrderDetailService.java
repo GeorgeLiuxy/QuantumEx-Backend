@@ -20,7 +20,7 @@ public class LockedOrderDetailService {
     private LockedOrderDetailDao lockedOrderDetailDao;
 
     public LockedOrderDetail findOne(Long id) {
-        return lockedOrderDetailDao.findOne(id);
+        return lockedOrderDetailDao.getOne(id);
     }
 
     public LockedOrderDetail save(LockedOrderDetail lockedOrderDetail) {

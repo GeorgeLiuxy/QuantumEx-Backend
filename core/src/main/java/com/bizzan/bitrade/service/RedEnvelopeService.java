@@ -38,7 +38,7 @@ public class RedEnvelopeService extends BaseService {
 		return redEnvelopeDao.findAllByState(state);
 	}
 	public RedEnvelope findOne(Long id) {
-		return redEnvelopeDao.findOne(id);
+		return redEnvelopeDao.getOne(id);
 	}
 	
     public RedEnvelope save(RedEnvelope envelope) {
@@ -50,7 +50,7 @@ public class RedEnvelopeService extends BaseService {
     }
     
     public RedEnvelope findById(Long id) {
-        return redEnvelopeDao.findOne(id);
+        return redEnvelopeDao.getOne(id);
     }
     
     public Page<RedEnvelope> findAll(Predicate predicate, Pageable pageable){

@@ -22,7 +22,7 @@ public class MiningOrderDetailService extends BaseService {
 	private MiningOrderDetailDao miningOrderDetailDao;
 	
 	public MiningOrderDetail findOne(Long id) {
-		return miningOrderDetailDao.findOne(id);
+		return miningOrderDetailDao.getOne(id);
 	}
 	
     public MiningOrderDetail save(MiningOrderDetail miningOrderDetail) {

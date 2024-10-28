@@ -82,7 +82,7 @@ public class MemberTransactionService extends BaseService {
 
 
     public MemberTransaction findOne(Long id) {
-        return transactionDao.findOne(id);
+        return transactionDao.getOne(id);
     }
 
 

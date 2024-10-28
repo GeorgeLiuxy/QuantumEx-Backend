@@ -103,7 +103,7 @@ public class AdvertiseService extends BaseService {
     }
 
     public Advertise findOne(Long id) {
-        return advertiseDao.findOne(id);
+        return advertiseDao.getOne(id);
     }
 
     public MemberAdvertiseDetail findOne(Long id, Long memberId) {
@@ -222,7 +222,7 @@ public class AdvertiseService extends BaseService {
                         try {
                             List<Map<String, String>> mapList = DB.query(sql, x.get("price"), x.get("price"), type.ordinal(), otcCoin.getId());
                             if (mapList.size() > 0) {
-                                Advertise advertise = advertiseDao.findOne(Long.valueOf(mapList.get(0).get("advertise_id")));
+                                Advertise advertise = advertiseDao.getOne(Long.valueOf(mapList.get(0).get("advertise_id")));
                                 Member member = advertise.getMember();
                                 excellents.add(ScanAdvertise
                                         .builder()
