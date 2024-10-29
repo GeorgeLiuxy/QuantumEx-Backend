@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
@@ -54,7 +55,8 @@ public class MemberWalletService extends BaseService {
     @Autowired
     private CoinDao coinDao;
     @Autowired
-    private MemberTransactionService transactionService;
+    @Lazy
+    private MemberTransactionService memberTransactionService;
     @Autowired
     private MemberDepositDao depositDao;
     @Autowired(required=false)
@@ -101,7 +103,7 @@ public class MemberWalletService extends BaseService {
             transaction.setType(TransactionType.RECHARGE);
             transaction.setFee(BigDecimal.ZERO);
             transaction.setDiscountFee("0");
-            transactionService.save(transaction);
+            memberTransactionService.save(transaction);
             //增加记录
             return new MessageResult(0, "success");
         } else {
@@ -153,7 +155,7 @@ public class MemberWalletService extends BaseService {
         transaction.setRealFee("0");
         transaction.setCreateTime(new Date());
 
-        transaction = transactionService.save(transaction);
+        transaction = memberTransactionService.save(transaction);
 
         Member mRes = memberDao.getOne(wallet.getMemberId());
         if(mRes != null ) {
@@ -203,7 +205,7 @@ public class MemberWalletService extends BaseService {
         transaction.setRealFee("0");
         transaction.setCreateTime(new Date());
 
-        transaction = transactionService.save(transaction);
+        transaction = memberTransactionService.save(transaction);
 
         Member mRes = memberDao.getOne(wallet.getMemberId());
         if(mRes != null ) {

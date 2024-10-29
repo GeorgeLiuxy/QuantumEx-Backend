@@ -28,8 +28,8 @@ import java.util.List;
 @Slf4j
 public class ExchangeOrderMineDetailController extends BaseAdminController{
 
-    @Autowired
-    private ESUtils esUtils;
+//    @Autowired
+//    private ESUtils esUtils;
     @Autowired
     private MemberService memberService;
     @Autowired
@@ -89,7 +89,8 @@ public class ExchangeOrderMineDetailController extends BaseAdminController{
             }
             query.append("]}},\"size\":" + pageSize + ",\"sort\":[{\"transaction_time\":{\"order\":\"desc\"}}]}");
 
-            return success(esUtils.query(JSONObject.parseObject(query.toString())));
+//            return success(esUtils.query(JSONObject.parseObject(query.toString()))); TODO ..
+            return null;
 
         }catch (Exception e){
             log.info(">>>>>>>>查询订单列表失败>>>>>>",e);

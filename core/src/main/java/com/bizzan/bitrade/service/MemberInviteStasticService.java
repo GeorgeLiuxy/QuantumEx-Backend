@@ -97,7 +97,7 @@ public class MemberInviteStasticService extends BaseService {
 	            criteria.add(Restrictions.eq("userIdentify", imVO.getMobilePhone(), false));
 	        }
 	        
-	        PageRequest pageRequest = new PageRequest(imVO.getPageNo() - 1, imVO.getPageSize(), sort);
+	        PageRequest pageRequest = PageRequest.of(imVO.getPageNo() - 1, imVO.getPageSize(), sort);
 	        return memberInviteStasticDao.findAll(criteria,pageRequest);
 	    }
 }

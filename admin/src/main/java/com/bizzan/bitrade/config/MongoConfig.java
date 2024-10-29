@@ -36,7 +36,7 @@ public class MongoConfig extends AbstractMongoConfiguration{
     }
 
     @Override
-    public Mongo mongo() {
+    public MongoClient mongoClient() {
         MongoClient mongoClient = new MongoClient(this.getMongoClientURI());
         return mongoClient;
     }
@@ -67,6 +67,7 @@ public class MongoConfig extends AbstractMongoConfiguration{
         MongoMappingContext mappingContext = new MongoMappingContext();
         return mappingContext;
     }
+
     @Override
     @Bean(name="newMongoTemplate")
     public MongoTemplate mongoTemplate() throws Exception {

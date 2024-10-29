@@ -27,7 +27,7 @@ public class JDBCUtils {
 
     @Autowired
     private JDBCConfig jdbcConfig;
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 
     @Autowired
     private ESUtils esUtils;
@@ -42,7 +42,7 @@ public class JDBCUtils {
 
             //Register JDBC driver
             Class.forName(JDBC_DRIVER);
-            System.setProperty("jdbc.driver", "com.mysql.jdbc.Driver");
+            System.setProperty("jdbc.driver", "com.mysql.cj.jdbc.Driver");
 
             //Open a connection
             log.info("Connecting to a selected database...");
@@ -112,7 +112,7 @@ public class JDBCUtils {
 
             //Register JDBC driver
             Class.forName(JDBC_DRIVER);
-            System.setProperty("jdbc.driver", "com.mysql.jdbc.Driver");
+            System.setProperty("jdbc.driver", "com.mysql.cj.jdbc.Driver");
 
             //Open a connection
             log.info("Connecting to a selected database...");
@@ -238,7 +238,7 @@ public class JDBCUtils {
 
             //Register JDBC driver
             Class.forName(JDBC_DRIVER);
-            System.setProperty("jdbc.driver", "com.mysql.jdbc.Driver");
+            System.setProperty("jdbc.driver", "com.mysql.cj.jdbc.Driver");
 
             //Open a connection
             log.info("Connecting to a selected database...");
@@ -314,7 +314,7 @@ public class JDBCUtils {
 
             //Register JDBC driver
             Class.forName(JDBC_DRIVER);
-            System.setProperty("jdbc.driver", "com.mysql.jdbc.Driver");
+            System.setProperty("jdbc.driver", "com.mysql.cj.jdbc.Driver");
 
             //Open a connection
             log.info("Connecting to a selected database...");

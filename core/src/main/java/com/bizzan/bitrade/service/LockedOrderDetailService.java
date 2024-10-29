@@ -38,7 +38,7 @@ public class LockedOrderDetailService {
     public Page<LockedOrderDetail> findAllByMemberId(Long memberId, int pageNo, int pageSize) {
         Sort orders = Criteria.sortStatic("createTime.desc");
         //分页参数
-        PageRequest pageRequest = new PageRequest(pageNo - 1, pageSize, orders);
+        PageRequest pageRequest = PageRequest.of(pageNo - 1, pageSize, orders);
         //查询条件
         Criteria<LockedOrderDetail> specification = new Criteria<LockedOrderDetail>();
         specification.add(Restrictions.eq("memberId", memberId, false));
@@ -49,7 +49,7 @@ public class LockedOrderDetailService {
     public Page<LockedOrderDetail> findAllByMiningOrderId(Long lockedOrderId, int pageNo, int pageSize) {
         Sort orders = Criteria.sortStatic("createTime.desc");
         //分页参数
-        PageRequest pageRequest = new PageRequest(pageNo - 1, pageSize, orders);
+        PageRequest pageRequest = PageRequest.of(pageNo - 1, pageSize, orders);
         //查询条件
         Criteria<LockedOrderDetail> specification = new Criteria<LockedOrderDetail>();
         specification.add(Restrictions.eq("lockedOrderId", lockedOrderId, false));

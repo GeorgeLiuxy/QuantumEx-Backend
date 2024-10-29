@@ -95,7 +95,7 @@ public class OtcCoinService extends BaseService {
         //排序方式
         Sort orders = Criteria.sortStatic("sort");
         //分页参数
-        PageRequest pageRequest = new PageRequest(pageNo, pageSize, orders);
+        PageRequest pageRequest = PageRequest.of(pageNo, pageSize, orders);
         //查询条件
         Criteria<OtcCoin> specification = new Criteria<OtcCoin>();
         specification.add(Restrictions.like("name", name, false));

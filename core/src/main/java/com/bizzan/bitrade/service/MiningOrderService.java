@@ -56,7 +56,7 @@ public class MiningOrderService extends BaseService {
 	public Page<MiningOrder> findAllByMemberIdPage(Long memberId, int pageNo, int pageSize){
 		Sort orders = Criteria.sortStatic("createTime.desc");
         //分页参数
-        PageRequest pageRequest = new PageRequest(pageNo - 1, pageSize, orders);
+        PageRequest pageRequest = PageRequest.of(pageNo - 1, pageSize, orders);
         //查询条件
         Criteria<MiningOrder> specification = new Criteria<MiningOrder>();
         specification.add(Restrictions.eq("memberId", memberId, false));

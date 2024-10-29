@@ -31,7 +31,7 @@ public class InviteManagementService extends BaseService{
         Criteria<Member> releaseBalance = new Criteria<>();
         Sort sort = releaseBalance.sort("registrationTime.desc");
         // PageNum 当前页 PageSize 每页多少条
-        PageRequest pageRequest = new PageRequest(inviteManagementVO.getPageNo() - 1,inviteManagementVO.getPageSize(),sort);
+        PageRequest pageRequest = PageRequest.of(inviteManagementVO.getPageNo() - 1,inviteManagementVO.getPageSize(),sort);
         return dao.findAll(releaseBalance,pageRequest);
     }
 
@@ -52,7 +52,7 @@ public class InviteManagementService extends BaseService{
         if(StringUtils.isNotEmpty(imVO.getEmail())){
             criteria.add(Restrictions.eq("email", imVO.getEmail(), false));
         }
-        PageRequest pageRequest = new PageRequest(imVO.getPageNo() - 1,imVO.getPageSize(),sort);
+        PageRequest pageRequest = PageRequest.of(imVO.getPageNo() - 1,imVO.getPageSize(),sort);
         return dao.findAll(criteria,pageRequest);
     }
 
@@ -82,7 +82,7 @@ public class InviteManagementService extends BaseService{
         }
         // 对查询出来的list进行ID倒序排序
         ListSort(memberList);
-        Pageable pageable = new PageRequest(inviteManagementVO.getPageNumber() -1, inviteManagementVO.getPageSize());
+        Pageable pageable = PageRequest.of(inviteManagementVO.getPageNumber() -1, inviteManagementVO.getPageSize());
         PageImpl<Member> pageData = getPageData(pageable, memberList);
 
         return pageData;

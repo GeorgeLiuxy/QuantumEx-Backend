@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -47,6 +48,7 @@ public class ActivityController  extends BaseController {
     private ActivityService activityService;
 	
 	@Autowired
+    @Lazy
     private ActivityOrderService activityOrderService;
     
 	@Autowired

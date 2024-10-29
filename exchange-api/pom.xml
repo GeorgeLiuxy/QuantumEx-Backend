@@ -47,14 +47,6 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.bizzan.bitrade</groupId>
             <artifactId>core</artifactId>
             <version>1.0</version>
@@ -84,6 +76,10 @@
             <version>2.6.0</version>
 			<systemPath>${project.basedir}/lib/spark-core-2.6.0.jar</systemPath>
 		</dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-commons</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

@@ -328,8 +328,8 @@ public class AdvertiseService extends BaseService {
     public Page<ScanAdvertise> paginationQuery(int pageNo, int pageSize, String country, String payMode, AdvertiseType advertiseType, Currency currency) {
         Sort.Order order1 = new Sort.Order(Sort.Direction.ASC, "price");
         Sort.Order order2 = new Sort.Order(Sort.Direction.DESC, "id");
-        Sort sort = new Sort(order1, order2);
-        PageRequest pageRequest = new PageRequest(pageNo, pageSize, sort);
+        Sort sort = Sort.by(order1, order2);
+        PageRequest pageRequest = PageRequest.of(pageNo, pageSize, sort);
         Specification<Advertise> specification = (root, criteriaQuery, criteriaBuilder) -> {
             Path<String> country1 = root.get("country");
             Path<String> payMode1 = root.get("payMode");

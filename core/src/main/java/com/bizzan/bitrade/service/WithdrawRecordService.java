@@ -216,7 +216,7 @@ public class WithdrawRecordService extends BaseService {
     @Transactional(readOnly = true)
     public Page<WithdrawRecord> findAllByMemberId(Long memberId, int page, int pageSize) {
         Sort orders = Criteria.sortStatic("id.desc");
-        PageRequest pageRequest = new PageRequest(page, pageSize, orders);
+        PageRequest pageRequest = PageRequest.of(page, pageSize, orders);
         Criteria<WithdrawRecord> specification = new Criteria<WithdrawRecord>();
         specification.add(Restrictions.eq("memberId", memberId, false));
         return withdrawApplyDao.findAll(specification, pageRequest);

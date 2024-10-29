@@ -48,8 +48,8 @@ import com.bizzan.bitrade.entity.Coin;
 import com.bizzan.bitrade.entity.ExchangeCoin;
 import com.bizzan.bitrade.entity.ExchangeOrder;
 import com.bizzan.bitrade.entity.ExchangeOrderStatus;
-import com.bizzan.bitrade.entity.QExchangeCoin;
-import com.bizzan.bitrade.entity.QExchangeOrder;
+//import com.bizzan.bitrade.entity.QExchangeCoin;
+//import com.bizzan.bitrade.entity.QExchangeOrder;
 import com.bizzan.bitrade.model.screen.ExchangeCoinScreen;
 import com.bizzan.bitrade.model.screen.ExchangeOrderScreen;
 import com.bizzan.bitrade.service.CoinService;
@@ -172,13 +172,13 @@ public class ExchangeCoinController extends BaseAdminController {
     }
     private Predicate getPredicate(ExchangeCoinScreen screen) {
         ArrayList<BooleanExpression> booleanExpressions = new ArrayList<>();
-        QExchangeCoin qExchangeCoin = QExchangeCoin.exchangeCoin;
-        if (StringUtils.isNotBlank(screen.getCoinSymbol())) {
-            booleanExpressions.add(qExchangeCoin.coinSymbol.equalsIgnoreCase(screen.getCoinSymbol()));
-        }
-        if (StringUtils.isNotBlank(screen.getBaseSymbol())) {
-            booleanExpressions.add(qExchangeCoin.baseSymbol.equalsIgnoreCase(screen.getBaseSymbol()));
-        }
+//        QExchangeCoin qExchangeCoin = QExchangeCoin.exchangeCoin;
+//        if (StringUtils.isNotBlank(screen.getCoinSymbol())) {
+//            booleanExpressions.add(qExchangeCoin.coinSymbol.equalsIgnoreCase(screen.getCoinSymbol()));
+//        }
+//        if (StringUtils.isNotBlank(screen.getBaseSymbol())) {
+//            booleanExpressions.add(qExchangeCoin.baseSymbol.equalsIgnoreCase(screen.getBaseSymbol()));
+//        }
 
         return PredicateUtils.getPredicate(booleanExpressions);
     }

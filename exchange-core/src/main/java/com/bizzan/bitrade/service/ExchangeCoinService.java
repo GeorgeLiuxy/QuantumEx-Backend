@@ -29,7 +29,7 @@ public class ExchangeCoinService {
             return null;
         };
         Sort.Order order = new Sort.Order(Sort.Direction.ASC, "sort");
-        Sort sort = new Sort(order);
+        Sort sort = Sort.by(order);
         return coinRepository.findAll(spec, sort);
     }
 
@@ -42,7 +42,7 @@ public class ExchangeCoinService {
             return null;
         };
         Sort.Order order = new Sort.Order(Sort.Direction.ASC, "sort");
-        Sort sort = new Sort(order);
+        Sort sort = Sort.by(order);
         return coinRepository.findAll(spec, sort);
     }
     
@@ -55,7 +55,7 @@ public class ExchangeCoinService {
             return null;
         };
         Sort.Order order = new Sort.Order(Sort.Direction.ASC, "sort");
-        Sort sort = new Sort(order);
+        Sort sort = Sort.by(order);
         return coinRepository.findAll(spec, sort);
     }
     
@@ -67,7 +67,7 @@ public class ExchangeCoinService {
             return null;
         };
         Sort.Order order = new Sort.Order(Sort.Direction.ASC, "sort");
-        Sort sort = new Sort(order);
+        Sort sort = Sort.by(order);
         return coinRepository.findAll(spec, sort);
     }
 
@@ -88,7 +88,7 @@ public class ExchangeCoinService {
 
     public Page<ExchangeCoin> pageQuery(int pageNo, Integer pageSize) {
         Sort orders = Criteria.sortStatic("sort");
-        PageRequest pageRequest = new PageRequest(pageNo - 1, pageSize, orders);
+        PageRequest pageRequest = PageRequest.of(pageNo - 1, pageSize, orders);
         return coinRepository.findAll(pageRequest);
     }
 
